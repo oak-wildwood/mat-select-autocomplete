@@ -12,8 +12,6 @@ import { FormControl } from "@angular/forms";
 @Component({
   selector: "mat-select-autocomplete",
   template: `
-    <mat-form-field appearance="{{ appearance }}">
-      <mat-label *ngIf="label">{{ label }}</mat-label>
       <mat-select
         #selectElem
         [placeholder]="placeholder"
@@ -56,8 +54,6 @@ import { FormControl } from "@angular/forms";
           >{{ option[display] }}
         </mat-option>
       </mat-select>
-      <mat-hint style="color:red" *ngIf="showErrorMsg">{{ errorMsg }}</mat-hint>
-    </mat-form-field>
   `,
   styles: [
     `
@@ -100,16 +96,11 @@ export class SelectAutocompleteComponent implements OnChanges, DoCheck {
   @Input() display = "display";
   @Input() value = "value";
   @Input() formControl: FormControl = new FormControl();
-  @Input() errorMsg: string = "Field is required";
-  @Input() showErrorMsg = false;
   @Input() selectedOptions;
   @Input() multiple = true;
 
   // New Options
   @Input() labelCount: number = 1;
-  @Input() appearance: "standard" | "fill" | "outline" = "standard";
-  @Input() label: string = "";
-
   @Output()
   selectionChange: EventEmitter<any> = new EventEmitter();
 
