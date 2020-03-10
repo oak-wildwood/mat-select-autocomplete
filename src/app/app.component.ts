@@ -38,8 +38,7 @@ export class AppComponent {
   ];
   selectedOptions = ["1", "2", "3"];
   selected = this.selectedOptions;
-  showError = false;
-  errorMessage = "";
+
 
   constructor() {}
 
@@ -57,7 +56,6 @@ export class AppComponent {
   }
 
   onValidate() {
-    this.showError = !this.showError;
-    this.errorMessage = "This field is required";
+
   }
 }
