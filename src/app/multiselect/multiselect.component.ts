@@ -100,7 +100,6 @@ export class MultiselectComponent implements OnChanges {
 
   // New Options
   @Input() labelCount: number = 1;
-  @Input() appearance: "standard" | "fill" | "outline" = "standard";
   @Output()
   selectionChange: EventEmitter<any> = new EventEmitter();
 

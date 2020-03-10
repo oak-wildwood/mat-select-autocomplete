@@ -101,7 +101,6 @@ export class SelectAutocompleteComponent implements OnChanges, DoCheck {
 
   // New Options
   @Input() labelCount: number = 1;
-  @Input() appearance: "standard" | "fill" | "outline" = "standard";
   @Output()
   selectionChange: EventEmitter<any> = new EventEmitter();
 
